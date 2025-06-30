@@ -1,0 +1,12 @@
+@defer(when isImageVisible) {
+  <img src="favicon.ico" alt="Deferred Image">
+}@placeholder {
+  <p>
+    While there's no content... 🤔
+  </p>
+}
+
+@if(!isImageVisible){
+  <button (click)="showImage()">See image</button>
+}
+

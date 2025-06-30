@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {DeferComponent } from './defer/defer';
+import { Placeholder } from './placeholder/placeholder';
+import { Loading } from './loading/loading';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [DeferComponent, Placeholder, Loading],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

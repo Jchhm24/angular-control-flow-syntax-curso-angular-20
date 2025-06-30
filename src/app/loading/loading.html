@@ -1,0 +1,22 @@
+@defer (when isContentReady) {
+  <!-- Solo se muestra cuando la data esta cargada y si el componente ya se cargo -->
+  <p>Large component Loaded</p>
+} @loading (after 200ms; minimum 4s) {
+  <!--
+    El loading sale cuando la información esta cargada pero tarda en mostrarse
+    por que el componente es grande y tarda en renderizarse.
+
+    @minimum 4s es el tiempo mínimo que se mostrará el loading, incluso si la información ya está lista.
+    @after 200ms es el tiempo mínimo que se esperará antes de mostrar el loading
+
+  -->
+  <p>Loading...😴😴😴</p>
+} @placeholder {
+  <!--
+    Este mensaje siempre se muestra de primer lugar, debido a que mientras la información
+    no esta cargada u obtenida, se muestra este mensaje.
+    Es útil para mostrar un mensaje de carga o una animación.
+  -->
+  <div>Setting up the content</div>
+}
+

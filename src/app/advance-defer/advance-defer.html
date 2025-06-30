@@ -1,0 +1,62 @@
+<h3>
+  DataReady
+</h3>
+
+@defer (when dataReady) {
+  <p>Los datos han sido cargados</p>
+} @placeholder {
+  <p>Mientras los datos no estan</p>
+}
+
+<!-- TODO: Idle es para que el componente se muestre cuando el navegador esta inactivo por un tiempo -->
+<h3>Idle</h3>
+@defer(on idle){
+  <p>
+    Large component loaded after everything is loaded and the browser is idle.
+  </p>
+} @placeholder {
+  <p>Mientras los datos no estan</p>
+}
+
+<!-- TODO: Viewport es para que el componente se muestre cuando el usuario hace scroll hasta él y el navegador está inactivo -->
+<h3>ViewPort</h3>
+@defer (on viewport) {
+  <p>
+    Only loads when the component is in the viewport. (When the user scrolls to it and the browser is idle)
+  </p>
+} @placeholder {
+  <!-- ! Aquie el placeholder es obligatorio para que mientras ocupe espacio -->
+  <p>Mientras los datos no estan</p>
+}
+
+<!-- TODO: Trigger Element es para que el componente se muestre cuando el elemento especificado está en el viewport -->
+<h3>Trigger Element</h3>
+<!-- OJO, no es necesario que se llame triggerElement, puede ser otro nombre pero de afuerzas debe de tener el # -->
+<div #triggerElement >Hola, que hace?</div>
+@defer(on viewport(triggerElement)){
+  <p>
+    Me cargue porque el div con triggerElement se ha mostrado en el viewport.
+  </p>
+}
+
+<!-- TODO: Interaction es para que el componente se muestre cuando el usuario interactua con él -->
+<h3>Interaction</h3>
+@defer (on interaction) {
+  <p>
+    Me cargue porque el usuario ha interactuado conmigo.
+  </p>
+} @placeholder {
+  <!-- ! OJO, es obligatorio el placeholder -->
+  <p>Mientras los datos no estan</p>
+}
+
+<!-- TODO: Interaction Element es para que el componente se muestre cuando el elemento especificado ha sido interactuado -->
+<h3>Interaction Element</h3>
+<div #interactionElement>Hola, que hace?</div>
+@defer(on interaction(interactionElement)){
+  <p>
+    Me cargue porque el div con interactionElement ha sido interactuado.
+  </p>
+} @placeholder {
+  <p>Mientras los datos no estan</p>
+}
