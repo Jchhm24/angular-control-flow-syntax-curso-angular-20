@@ -60,3 +60,36 @@
 } @placeholder {
   <p>Mientras los datos no estan</p>
 }
+
+<!-- TODO: Hover (como si no supiera, gracias css por dareme el spoiler) -->
+<h3>Interacción con el Hover</h3>
+
+@defer (on hover) {
+  <p>Me cargue porque el usuario ha hecho hover sobre mi.</p>
+} @placeholder {
+  <p>Pasamel la manita para que me cargue</p>
+}
+
+
+<!-- TODO: Hover especifico -->
+<h3>Interacción con el Hover especificado</h3>
+<div #specificElement >Pasame la manita</div>
+
+@defer (on hover(specificElement)) {
+  <p>Me cargue porque el usuario ha hecho hover sobre mi.</p>
+}@placeholder {
+  <p>Pasamel la manita para que me cargue</p>
+}
+
+
+<!-- TODO: Con timer -->
+<h3>
+  Interacción con el Timer
+</h3>
+
+@defer (on timer(500ms)){
+  <p>Me cargue porque el timer ha expirado.</p>
+} @placeholder {
+  <p>Mientras los datos no están</p>
+}
+
