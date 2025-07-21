@@ -1,6 +1,6 @@
 @defer(when isContentReady) {
   <p>
-    Component
+    Component is ready!
   </p>
 } @loading (after 100ms; minimum 1s){
   <p>
@@ -15,6 +15,16 @@
     There was an error loading the component.
   </p>
 }
+
+@defer(when isContentReady) {
+  <app-child-component />
+} @error {
+  <p>
+    There was an error loading the component.
+  </p>
+}
+
+<button (click)="onClick()" >Hola</button>
 
 <!--
   TODO: Esto es stream architecture
