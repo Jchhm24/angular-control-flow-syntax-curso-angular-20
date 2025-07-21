@@ -9,12 +9,18 @@ import { ChildComponent } from '../child-component/child-component';
 })
 export class ErrorComponent implements OnInit {
 
+
+  //! MAYORMENTE ESTO PASA O SE UTILIZA CON EL SERVER SIDE RENDERING
+  //? En este caso, el componente hijo tiene un error simulado en su constructor.
+
+
   isContentReady = false;
 
   ngOnInit(){
     setTimeout(() => {
       this.isContentReady = true;
-    }, 5000);
+
+    }, 10000);
   }
 
   onClick = () => {
