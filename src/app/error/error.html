@@ -1,0 +1,29 @@
+@defer(when isContentReady) {
+  <p>
+    Component
+  </p>
+} @loading (after 100ms; minimum 1s){
+  <p>
+    loading...
+  </p>
+} @placeholder {
+  <p>
+    Component is not ready yet, please wait...
+  </p>
+} @error {
+  <p>
+    There was an error loading the component.
+  </p>
+}
+
+<!--
+  TODO: Esto es stream architecture
+ El concepto de 'Stream architecture' es un patrón de diseño que permite manejar
+  flujos de datos asíncronos en aplicaciones web, facilitando la carga progresiva
+  de contenido y mejorando la experiencia del usuario al evitar bloqueos en la
+  interfaz.
+
+  En este contexto, se utilizan directivas como @defer, @loading, @placeholder y
+  @error para gestionar el estado de los componentes durante su carga y
+  renderizado.
+-->
